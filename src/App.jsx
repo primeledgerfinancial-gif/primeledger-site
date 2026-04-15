@@ -26,7 +26,7 @@ export default function PrimeLedgerWebsite() {
       <nav className="bg-white border-b border-gray-100 py-4 px-6 fixed w-full top-0 z-50">
         <div className="max-w-6xl mx-auto flex justify-center items-center">
           <img 
-            src="https://raw.githubusercontent.com/primeledgerfinancial-gif/primeledger-site/main/image_0.png" 
+            src="https://raw.githubusercontent.com/primeledgerfinancial-gif/primeledger-site/main/image_0.png" alt="PrimeLedger Financial Logo" className="h-32 w-auto mx-auto mb-4" />
             alt="PrimeLedger Financial Logo" 
             className="h-20" 
           />
