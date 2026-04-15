@@ -9,27 +9,42 @@ const WHATSAPP_LINK = "https://wa.me/27686350987";
 const brandColor = "#28626A";
 
 export default function PrimeLedgerWebsite() {
-  const [currency, setCurrency] = useState("USD");
+  const [currency, setCurrency] = useState("ZAR");
 
   const prices = {
     Starter: { USD: 120, GBP: 95, EUR: 110, ZAR: 2200 },
     Growth: { USD: 250, GBP: 200, EUR: 230, ZAR: 4500 },
   };
 
-  const partners = ["QuickBooks", "Xero", "Sage Pastel", "Excel", "GoodX", "ICB Certified", "IQB Qualified"];
+  const software = [
+    { name: "QuickBooks", color: "#2CA01C" },
+    { name: "Xero", color: "#13B5EA" },
+    { name: "Sage Pastel", color: "#00BA4A" },
+    { name: "Excel", color: "#217346" },
+    { name: "GoodX", color: "#005696" }
+  ];
+
+  const services = [
+    "Monthly Bookkeeping & Accounting",
+    "Clean-up & Catch-up Projects",
+    "Medical Suite Financial Management",
+    "VAT, PAYE & Tax Submissions",
+    "Management Accounts & Reporting",
+    "Payroll Processing"
+  ];
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
+    <div className="min-h-screen bg-white text-gray-900 font-sans scroll-smooth">
       
       {/* Floating WhatsApp */}
-      <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="fixed bottom-6 right-6 bg-green-500 text-white px-6 py-3 rounded-full shadow-2xl z-50 font-bold hover:bg-green-600 transition-all">
-        Chat on WhatsApp
+      <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="fixed bottom-6 right-6 bg-green-500 text-white px-6 py-3 rounded-full shadow-2xl z-50 font-bold hover:bg-green-600 transition-all flex items-center gap-2">
+        <span>Chat with Monique</span>
       </a>
 
       {/* Hero Section */}
-      <section className="text-center pt-20 pb-20 px-6 bg-white border-b border-gray-100 relative overflow-hidden" style={{
-        backgroundImage: 'linear-gradient(rgba(40, 98, 106, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(40, 98, 106, 0.03) 1px, transparent 1px)',
-        backgroundSize: '30px 30px'
+      <section className="text-center pt-16 pb-20 px-6 bg-gray-50 border-b border-gray-100 relative" style={{
+        backgroundImage: 'linear-gradient(rgba(40, 98, 106, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(40, 98, 106, 0.04) 1px, transparent 1px)',
+        backgroundSize: '40px 40px'
       }}>
         <div className="max-w-4xl mx-auto">
           <img 
@@ -37,88 +52,117 @@ export default function PrimeLedgerWebsite() {
             alt="PrimeLedger Financial Logo" 
             className="h-32 w-auto mx-auto mb-6" 
           />
-          <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="text-4xl md:text-6xl font-extrabold mb-4 text-gray-900 tracking-tight">
-            Global Financial Clarity
-          </motion.h1>
-          <p className="text-xl mb-8 text-gray-600">
-            Certified Bookkeeping Services for Small Businesses & Medical Practices.
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-gray-900 tracking-tight">
+            Professional Financial Solutions
+          </h1>
+          <p className="text-xl mb-8 text-gray-600 font-light">
+            Certified Bookkeeping and Business Support based in Port Shepstone, serving clients globally.
           </p>
-          <div className="flex flex-col md:flex-row justify-center gap-4">
-            <a href={WHATSAPP_LINK} className="text-white rounded-xl text-lg px-8 py-4 font-semibold transition" style={{ backgroundColor: brandColor }}>
-              Book Free Consultation
-            </a>
-          </div>
         </div>
       </section>
 
-      {/* Trust Section */}
-      <section className="py-12 bg-gray-50 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">Expertise in World-Class Systems</p>
-          <div className="flex flex-wrap justify-center items-center gap-6 opacity-80 grayscale hover:grayscale-0 transition-all">
-             {partners.map((item) => (
-               <span key={item} className="text-sm md:text-base font-bold text-gray-600 border border-gray-200 px-4 py-2 rounded-lg bg-white shadow-sm">
-                 {item}
+      {/* SOFTWARE BADGES (The "Logos") */}
+      <section className="py-10 bg-white shadow-inner">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Preferred Software Expert</p>
+          <div className="flex flex-wrap justify-center items-center gap-4">
+             {software.map((item) => (
+               <span key={item.name} className="px-5 py-2 rounded-full border-2 font-bold text-sm shadow-sm transition hover:scale-105" style={{ borderColor: item.color, color: item.color }}>
+                 {item.name}
                </span>
              ))}
           </div>
         </div>
       </section>
 
-      {/* Currency Switcher (Updated for ZAR) */}
-      <div className="flex flex-col items-center gap-3 mt-12 px-6">
-        <span className="text-sm font-bold uppercase tracking-widest" style={{ color: brandColor }}>Select Billing Currency:</span>
-        <select 
-          value={currency} 
-          onChange={(e) => setCurrency(e.target.value)} 
-          className="p-3 bg-white border-2 border-gray-200 rounded-xl shadow-sm focus:ring-2 outline-none cursor-pointer text-lg font-semibold"
-          style={{ borderColor: brandColor }}
-        >
-          <option value="ZAR">ZAR (R) - South Africa</option>
-          <option value="USD">USD ($) - International</option>
-          <option value="GBP">GBP (£) - United Kingdom</option>
-          <option value="EUR">EUR (€) - Europe</option>
-        </select>
-      </div>
-
-      {/* Pricing Section */}
-      <section className="py-16 px-6 bg-white mt-12">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 underline decoration-teal-500 decoration-4 underline-offset-8">Our Packages</h2>
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {["Starter", "Growth"].map((plan, i) => (
-            <div key={i} className="bg-gray-50 border border-gray-200 rounded-3xl p-10 text-center hover:shadow-2xl transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-4">{plan}</h3>
-              <p className="text-5xl font-black mb-6" style={{ color: brandColor }}>
-                {currency === "ZAR" && "R"}
-                {currency === "USD" && "$"}
-                {currency === "GBP" && "£"}
-                {currency === "EUR" && "€"}
-                {prices[plan][currency]}<span className="text-lg font-normal text-gray-500">/mo</span>
-              </p>
-              <ul className="text-left mb-8 space-y-3 text-gray-600 font-medium">
-                <li className="flex items-center gap-2">✓ Monthly Reconciliations</li>
-                <li className="flex items-center gap-2">✓ Financial Reporting</li>
-                <li className="flex items-center gap-2">✓ Software Support</li>
-              </ul>
-              <a href={WHATSAPP_LINK} className="block w-full text-white rounded-xl px-6 py-4 font-bold transition shadow-md" style={{ backgroundColor: brandColor }}>
-                Select {plan} Plan
-              </a>
-            </div>
-          ))}
+      {/* ABOUT SECTION */}
+      <section className="py-20 px-6 max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 className="text-3xl font-bold mb-6" style={{ color: brandColor }}>About PrimeLedger</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Founded by <strong>Monique</strong>, PrimeLedger Financial was born out of a passion for helping business owners regain control of their time and their numbers.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            With <strong>ICB and IQB qualifications</strong>, I provide more than just data entry. I offer strategic bookkeeping that helps you understand where your money is going, ensuring your business is healthy, compliant, and ready to grow.
+          </p>
+        </div>
+        <div className="bg-gray-100 p-8 rounded-3xl border-l-8" style={{ borderColor: brandColor }}>
+          <h3 className="text-xl font-bold mb-4 italic">"My mission is to take the stress out of your month-end, so you can focus on what you do best—running your business."</h3>
+          <p className="font-bold">— Monique, Founder</p>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 text-center text-white" style={{ backgroundColor: brandColor }}>
-        <h2 className="text-4xl font-bold mb-4 italic">PrimeLedger Financial</h2>
-        <p className="mb-10 text-white text-opacity-90 text-xl font-light">From Port Shepstone to the World. Let's get your books in order.</p>
-        <a href={WHATSAPP_LINK} className="inline-flex items-center gap-2 bg-white rounded-full px-10 py-4 text-xl font-bold hover:bg-gray-100 transition shadow-lg" style={{ color: brandColor }}>
-          <CalendarIcon /> Get Started
-        </a>
+      {/* SERVICES SECTION */}
+      <section className="py-20 bg-gray-900 text-white px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold mb-12 text-center">Comprehensive Services</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <div key={index} className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-teal-500 transition">
+                <p className="text-lg font-medium">{service}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
-      <footer className="text-center py-10 bg-white border-t border-gray-100 text-gray-400 text-sm">
-        © {new Date().getFullYear()} PrimeLedger Financial | ICB & IQB Certified Professional Bookkeeper
+      {/* PRICING & CURRENCY */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4" style={{ color: brandColor }}>Transparent Monthly Plans</h2>
+          <div className="flex justify-center items-center gap-3 mb-10 mt-6">
+            <span className="text-sm font-bold text-gray-400">Currency:</span>
+            <select 
+              value={currency} 
+              onChange={(e) => setCurrency(e.target.value)} 
+              className="p-2 border-2 rounded-lg font-bold outline-none"
+              style={{ borderColor: brandColor }}
+            >
+              <option value="ZAR">ZAR (R)</option>
+              <option value="USD">USD ($)</option>
+              <option value="GBP">GBP (£)</option>
+              <option value="EUR">EUR (€)</option>
+            </select>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {["Starter", "Growth"].map((plan) => (
+              <div key={plan} className="border-2 rounded-3xl p-10 hover:shadow-2xl transition" style={{ borderColor: '#eee' }}>
+                <h3 className="text-2xl font-bold mb-4">{plan}</h3>
+                <p className="text-5xl font-black mb-8" style={{ color: brandColor }}>
+                  {currency === "ZAR" ? "R" : (currency === "USD" ? "$" : (currency === "GBP" ? "£" : "€"))}
+                  {prices[plan][currency]}<span className="text-sm font-normal text-gray-400">/mo</span>
+                </p>
+                <a href={WHATSAPP_LINK} className="block w-full py-4 rounded-xl text-white font-bold transition" style={{ backgroundColor: brandColor }}>
+                  Get Started
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT SECTION */}
+      <section className="py-20 bg-gray-50 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-12" style={{ color: brandColor }}>Get In Touch</h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="bg-white p-8 rounded-2xl shadow-sm">
+              <h4 className="font-bold mb-2">Direct Contact</h4>
+              <p className="text-gray-600 mb-1">primeledgerfinancial@gmail.com</p>
+              <p className="text-gray-600">+27 68 635 0987</p>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-sm">
+              <h4 className="font-bold mb-2">Location</h4>
+              <p className="text-gray-600">Port Shepstone</p>
+              <p className="text-gray-600">KwaZulu-Natal, South Africa</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="py-10 text-center text-gray-400 text-sm border-t">
+        © {new Date().getFullYear()} PrimeLedger Financial | Professional Bookkeeper
       </footer>
     </div>
   );
