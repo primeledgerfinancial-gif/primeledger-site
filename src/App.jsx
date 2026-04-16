@@ -3,14 +3,13 @@ import { motion } from "framer-motion";
 
 const WHATSAPP_LINK = "https://wa.me/27686350987";
 
-// YOUR PREMIUM BRAND PALETTE
 const colors = {
-  primary: "#0B3F3F",    // Deep Teal
-  secondary: "#2E8B57",  // Emerald Green
-  accent: "#D4AF37",     // Gold
-  bgLight: "#F5F5F5",    // Light Grey
+  primary: "#0B3F3F",
+  secondary: "#2E8B57",
+  accent: "#D4AF37",
+  bgLight: "#F5F5F5",
   white: "#FFFFFF",
-  text: "#2B2B2B"        // Dark Charcoal
+  text: "#2B2B2B"
 };
 
 export default function PrimeLedgerWebsite() {
@@ -21,150 +20,165 @@ export default function PrimeLedgerWebsite() {
     Growth: { USD: 250, GBP: 200, EUR: 230, ZAR: 4500 },
   };
 
-  return (
-    <div className="min-h-screen font-sans antialiased" style={{ color: colors.text, backgroundColor: colors.white }}>
+  const software = ["Xero", "QuickBooks", "Sage Pastel", "Excel", "GoodX"];
 
-      {/* NAVIGATION BAR */}
+  return (
+    <div className="min-h-screen font-sans" style={{ color: colors.text }}>
+
+      {/* NAV */}
       <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <img 
-              src="https://raw.githubusercontent.com/primeledgerfinancial-gif/primeledger-site/main/image_0.png" 
-              alt="Logo" 
-              className="h-12 w-auto" 
-            />
-            <span className="font-bold tracking-[0.2em] text-sm hidden sm:block" style={{ color: colors.primary }}>PRIMELEDGER</span>
+            <img src="https://raw.githubusercontent.com/primeledgerfinancial-gif/primeledger-site/main/image_0.png" className="h-12" />
+            <span className="font-bold tracking-[0.2em] text-sm" style={{ color: colors.primary }}>
+              PRIMELEDGER
+            </span>
           </div>
-          <a href={WHATSAPP_LINK} className="px-6 py-2 rounded-full text-white text-sm font-bold transition hover:opacity-90" style={{ backgroundColor: colors.primary }}>
+
+          <a href={WHATSAPP_LINK}
+            className="px-6 py-2 rounded-full text-white font-bold"
+            style={{ backgroundColor: colors.primary }}>
             GET STARTED
           </a>
         </div>
       </nav>
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <section className="pt-40 pb-24 px-6 text-center" style={{ backgroundColor: colors.bgLight }}>
-        <div className="max-w-4xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight" style={{ color: colors.primary }}>
-              Financial Clarity <br/> <span style={{ color: colors.secondary }}>Without the Stress.</span>
-            </h1>
-            <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Certified remote bookkeeping for small businesses and medical practices. Based in South Africa, serving clients globally.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              <span className="px-4 py-2 bg-white rounded-full text-xs font-bold border shadow-sm" style={{ color: colors.primary, borderColor: colors.accent }}>✓ ICB CERTIFIED</span>
-              <span className="px-4 py-2 bg-white rounded-full text-xs font-bold border shadow-sm" style={{ color: colors.primary, borderColor: colors.accent }}>✓ IQB QUALIFIED</span>
-              <span className="px-4 py-2 bg-white rounded-full text-xs font-bold border shadow-sm" style={{ color: colors.primary, borderColor: colors.accent }}>✓ REMOTE EXPERT</span>
-            </div>
-            <a href={WHATSAPP_LINK} className="inline-block px-12 py-5 rounded-2xl text-white font-bold text-lg shadow-xl hover:scale-105 transition-transform" style={{ backgroundColor: colors.primary }}>
-              Book Free Consultation
-            </a>
-          </motion.div>
+        <motion.h1 className="text-4xl md:text-6xl font-black mb-6" style={{ color: colors.primary }}>
+          Affordable Expert Bookkeeping <br />
+          <span style={{ color: colors.secondary }}>for Businesses Worldwide 🌍</span>
+        </motion.h1>
+
+        <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          Certified remote bookkeeping that keeps your business organised, compliant, and stress-free — wherever you are.
+        </p>
+
+        {/* TRUST BADGES */}
+        <div className="flex flex-wrap justify-center gap-4 mb-10">
+          <span className="px-4 py-2 bg-white rounded-full text-xs font-bold border shadow-sm">✔ ICB Certified</span>
+          <span className="px-4 py-2 bg-white rounded-full text-xs font-bold border shadow-sm">✔ IQB Qualified</span>
+          <span className="px-4 py-2 bg-white rounded-full text-xs font-bold border shadow-sm">✔ Remote Global Service</span>
+        </div>
+
+        {/* MAIN CTA */}
+        <a href={WHATSAPP_LINK}
+          className="px-10 py-4 text-white rounded-xl font-bold shadow-lg"
+          style={{ backgroundColor: colors.primary }}>
+          Get My Free Financial Review
+        </a>
+
+        {/* 🔥 NEW CONVERSION LINE */}
+        <p className="mt-4 text-sm text-gray-500 max-w-xl mx-auto">
+          Get a free 10-minute review of your bookkeeping to identify errors, missing records, or money leaks in your business.
+        </p>
+      </section>
+
+      {/* SOFTWARE */}
+      <section className="py-12 text-center">
+        <p className="text-xs uppercase tracking-widest text-gray-400 mb-6">
+          Software & Systems We Work With
+        </p>
+
+        <div className="flex flex-wrap justify-center gap-4">
+          {software.map((tool) => (
+            <span key={tool} className="px-6 py-2 bg-gray-100 rounded-full font-semibold text-sm">
+              {tool}
+            </span>
+          ))}
         </div>
       </section>
 
-      {/* SERVICES GRID */}
+      {/* SERVICES */}
       <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4" style={{ color: colors.primary }}>How We Help</h2>
-            <div className="w-20 h-1 mx-auto" style={{ backgroundColor: colors.accent }}></div>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { title: "Monthly Bookkeeping", desc: "Keep your records up-to-date and ready for tax season." },
-              { title: "Medical Support", desc: "Specialized financial management for medical suites and practitioners." },
-              { title: "Clean-up Projects", desc: "We fix the backlog and get your messy books back in order." },
-              { title: "Financial Reports", desc: "Clear, monthly reports so you know exactly where your money is." },
-              { title: "VAT & Tax", desc: "Stay compliant with regular submissions and reliable record keeping." },
-              { title: "Global Payroll", desc: "Accurate payroll processing for teams of all sizes." }
-            ].map((s, i) => (
-              <div key={i} className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition">
-                <h3 className="text-xl font-bold mb-3" style={{ color: colors.secondary }}>{s.title}</h3>
-                <p className="text-gray-500 leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
-          </div>
+        <h2 className="text-3xl font-bold text-center mb-12" style={{ color: colors.primary }}>
+          How We Help Your Business
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {[
+            "Monthly Bookkeeping",
+            "Catch-up & Clean-up",
+            "Financial Reports",
+            "VAT & Tax Support",
+            "Payroll Processing",
+            "Remote Bookkeeping"
+          ].map((s) => (
+            <div key={s} className="p-8 bg-white border rounded-xl shadow-sm">
+              {s}
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* PRICING SECTION */}
-      <section className="py-24 px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">Simple, Scalable Packages</h2>
-          
-          {/* CURRENCY SELECTOR */}
-          <div className="mb-12 inline-flex items-center bg-white p-2 rounded-2xl border shadow-sm">
-            <span className="px-4 text-xs font-bold text-gray-400 uppercase">Select Currency</span>
-            <select 
-              value={currency} 
-              onChange={(e) => setCurrency(e.target.value)} 
-              className="p-3 bg-white font-bold outline-none cursor-pointer"
-              style={{ color: colors.primary }}
-            >
-              <option value="ZAR">ZAR (R)</option>
-              <option value="USD">USD ($)</option>
-              <option value="GBP">GBP (£)</option>
-              <option value="EUR">EUR (€)</option>
-            </select>
-          </div>
+      {/* PACKAGES */}
+      <section className="py-24 px-6 bg-gray-50 text-center">
+        <h2 className="text-3xl font-bold mb-6">Simple Monthly Packages</h2>
 
-          <div className="grid md:grid-cols-2 gap-10">
-            {["Starter", "Growth"].map((plan) => (
-              <div key={plan} className="bg-white border-2 rounded-[2.5rem] p-12 hover:border-teal-900 transition-all shadow-sm">
-                <h3 className="text-sm font-black uppercase tracking-widest text-gray-400 mb-4">{plan} Plan</h3>
-                <p className="text-6xl font-black mb-8" style={{ color: colors.primary }}>
-                  {currency === "ZAR" ? "R" : (currency === "USD" ? "$" : (currency === "GBP" ? "£" : "€"))}
-                  {prices[plan][currency]}
-                </p>
-                <ul className="text-left space-y-4 mb-10 text-gray-600">
-                  <li className="flex items-center gap-2 font-medium">✓ Monthly Reconciliations</li>
-                  <li className="flex items-center gap-2 font-medium">✓ Management Accounts</li>
-                  <li className="flex items-center gap-2 font-medium">✓ Software Support</li>
-                </ul>
-                <a href={WHATSAPP_LINK} className="block py-4 rounded-xl text-white font-bold transition shadow-lg hover:brightness-110" style={{ backgroundColor: colors.secondary }}>
-                  Inquire Now
-                </a>
-              </div>
-            ))}
-          </div>
+        {/* 🔥 NEW VALUE LINE */}
+        <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
+          ⚡ Most businesses save more money than they spend by staying organised, compliant, and tax-ready.
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+          {[
+            { name: "Starter", price: "$100 / R1800", desc: "Perfect for new businesses and startups" },
+            { name: "Monthly", price: "$150 / R2500", desc: "Full monthly bookkeeping support" },
+            { name: "Full Support", price: "$250 / R4500", desc: "Complete financial management" }
+          ].map((p) => (
+            <div key={p.name} className="bg-white p-8 rounded-xl shadow">
+              <h3 className="font-bold text-lg mb-2">{p.name}</h3>
+              <p className="text-2xl font-black mb-4" style={{ color: colors.primary }}>{p.price}</p>
+              <p className="text-gray-600 mb-6">{p.desc}</p>
+              <a href={WHATSAPP_LINK}
+                className="block bg-green-600 text-white py-3 rounded-xl font-bold">
+                Get Started
+              </a>
+            </div>
+          ))}
+
         </div>
       </section>
 
-      {/* FINAL CALL TO ACTION */}
-      <section className="py-24 px-6 text-center text-white" style={{ backgroundColor: colors.primary }}>
-        <h2 className="text-4xl font-bold mb-6">Ready to Scale Your Business?</h2>
-        <p className="text-xl mb-10 opacity-80 max-w-xl mx-auto">Take the first step toward financial freedom. Let's chat about your needs.</p>
-        <a href={WHATSAPP_LINK} className="inline-block px-12 py-5 bg-white rounded-2xl font-black text-lg transition hover:scale-105" style={{ color: colors.primary }}>
-          CHAT ON WHATSAPP
+      {/* TESTIMONIALS */}
+      <section className="py-24 px-6 text-center" style={{ backgroundColor: colors.bgLight }}>
+        <h2 className="text-3xl font-bold mb-10">What Clients Say</h2>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {[
+            "Saved me hours every month and fixed my books.",
+            "Professional, fast and very reliable service.",
+            "Now I finally understand my business finances."
+          ].map((t, i) => (
+            <div key={i} className="bg-white p-6 rounded-xl shadow">
+              {t}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA FINAL */}
+      <section className="py-24 text-center text-white" style={{ backgroundColor: colors.primary }}>
+        <h2 className="text-3xl font-bold mb-6">
+          Ready to get your finances under control?
+        </h2>
+
+        <p className="mb-8 text-white/80 max-w-xl mx-auto">
+          Start with a free financial review and see exactly where your business stands.
+        </p>
+
+        <a href={WHATSAPP_LINK}
+          className="px-10 py-4 bg-white rounded-xl font-black"
+          style={{ color: colors.primary }}>
+          Chat on WhatsApp Now
         </a>
       </section>
 
       {/* FOOTER */}
-      <footer className="py-16 text-center border-t border-gray-100 bg-white">
-        <img 
-          src="https://raw.githubusercontent.com/primeledgerfinancial-gif/primeledger-site/main/image_0.png" 
-          alt="Logo" 
-          className="h-12 mx-auto mb-6 grayscale opacity-50" 
-        />
-        <div className="space-y-2 mb-8 font-medium">
-          <p>primeledgerfinancial@gmail.com</p>
-          <p>+27 68 635 0987</p>
-          <p className="text-xs text-gray-400 mt-4 uppercase tracking-widest">South Africa • Remote Globally</p>
-        </div>
-        <p className="text-[10px] text-gray-300 uppercase tracking-[0.5em]">
-          © {new Date().getFullYear()} PrimeLedger Financial
-        </p>
+      <footer className="py-12 text-center text-sm text-gray-500">
+        primeledgerfinancial@gmail.com • +27 68 635 0987
       </footer>
-
-      {/* FLOATING WHATSAPP BUTTON (MOBILE) */}
-      <a 
-        href={WHATSAPP_LINK} 
-        className="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-2xl z-50 hover:scale-110 transition-transform md:px-8 md:py-4 md:rounded-2xl flex items-center gap-2"
-      >
-        <span className="font-bold text-sm">WHATSAPP</span>
-      </a>
 
     </div>
   );
