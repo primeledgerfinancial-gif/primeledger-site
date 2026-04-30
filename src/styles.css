@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: #F5F7F7;
+}
+
+h1, h2 {
+  font-family: 'Poppins', sans-serif;
+  color: #0F3D3E;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: white;
+}
+
+.logo {
+  height: 50px;
+}
+
+.nav-btn {
+  background: #1F7A7A;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+}
+
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.primary {
+  background: #1F7A7A;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+}
+
+.services, .pricing, .testimonials, .contact {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card, .price-card {
+  background: white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.highlight {
+  border: 2px solid #1F7A7A;
+}
+
+form input, form textarea {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 250px;
+}
+
+form button {
+  background: #1F7A7A;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 15px;
+  border-radius: 50%;
+  color: white;
+}
