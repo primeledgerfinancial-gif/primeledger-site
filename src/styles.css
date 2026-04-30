@@ -2,17 +2,24 @@ body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   background: #F5F7F7;
+  color: #1A1A1A;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: 'Poppins', sans-serif;
   color: #0F3D3E;
 }
 
+.container {
+  text-align: center;
+}
+
+/* HEADER */
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 15px 30px;
+  align-items: center;
+  padding: 15px 25px;
   background: white;
 }
 
@@ -20,17 +27,14 @@ h1, h2 {
   height: 50px;
 }
 
-.nav-btn {
-  background: #1F7A7A;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
-}
-
+/* HERO */
 .hero {
   padding: 60px 20px;
-  text-align: center;
+}
+
+/* BUTTONS */
+button {
+  cursor: pointer;
 }
 
 .primary {
@@ -41,44 +45,86 @@ h1, h2 {
   border: none;
 }
 
-.services, .pricing, .testimonials, .contact {
-  padding: 40px 20px;
-  text-align: center;
+.nav-btn {
+  background: #1F7A7A;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
 }
 
+.cta-btn {
+  background: #1F7A7A;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  border: none;
+}
+
+/* TRUST */
+.trust {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+  background: white;
+}
+
+/* SECTIONS */
+.services,
+.pricing,
+.testimonials,
+.contact,
+.cta {
+  padding: 40px 20px;
+}
+
+/* GRID */
 .grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.card, .price-card {
+/* CARDS */
+.card,
+.price-card {
   background: white;
-  padding: 20px;
   margin: 10px;
+  padding: 20px;
   border-radius: 10px;
-  width: 200px;
+  width: 220px;
 }
 
 .highlight {
   border: 2px solid #1F7A7A;
 }
 
-form input, form textarea {
+.price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* FORM */
+form input,
+form textarea {
   display: block;
   margin: 10px auto;
   padding: 10px;
-  width: 250px;
+  width: 260px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
 form button {
   background: #1F7A7A;
   color: white;
   padding: 10px;
-  border: none;
   border-radius: 8px;
+  border: none;
 }
 
+/* WHATSAPP FLOAT */
 .whatsapp {
   position: fixed;
   bottom: 20px;
@@ -87,4 +133,6 @@ form button {
   padding: 15px;
   border-radius: 50%;
   color: white;
-}
+  font-size: 18px;
+  text-decoration: none;
+} 
